@@ -22,6 +22,7 @@ public class SIDBMonitor extends Thread {
 	public static boolean debugFlag = false;
 	public static boolean fullReport = false;
 	public static boolean appendMode = false;
+	public static boolean jsonAppendMode = false;
 	public static boolean encryptFlag = false;
 	public static String schema = "";
 	public static boolean transDataDistFlag = false;
@@ -1123,6 +1124,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 		// Parse arguments
 		parseArgs(args);
 		
+		//Load properties
 		sidbmonitorProperties = new propertyHandler(propertiesFile);
 		String url = sidbmonitorProperties.getProperty("jdbc.url");
 		String username = sidbmonitorProperties.getProperty("jdbc.username");
@@ -1197,7 +1199,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			appendMode = true;
 		
 		if (jsonFile.exists())
-			appendMode = true;
+			jsonAppendMode = true;
 
 		FileWriter fstream;
 		FileWriter fstream2;
@@ -1221,6 +1223,10 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			bufferAddString(result, false);
 			// End of HTML Header
 
+		}
+		
+		if (!jsonAppendMode) {
+			bufferAddJSONString("[", false);
 		}
 
 		// Print output filename
