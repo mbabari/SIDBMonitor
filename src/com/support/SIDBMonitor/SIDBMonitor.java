@@ -61,7 +61,9 @@ public class SIDBMonitor extends Thread {
 			if (result != null && !result.isEmpty()) {
 				
 				jsonOutputBuffer.write(result);
-				if (result =="}") {jsonOutputBuffer.newLine();}
+				if (result =="}") {
+					jsonOutputBuffer.write(",");
+					jsonOutputBuffer.newLine();}
 				
 				jsonOutputBuffer.flush();
 			}
