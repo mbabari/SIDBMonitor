@@ -1241,7 +1241,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(url, username, password);
-			result = "Connected to : " + url + " in:  "
+			result = "Connected to url :[ " + url + " ] User: "+ username+" in:  "
 					+ (System.currentTimeMillis() - timeSpent) + " ms";
 			System.out.println("Connection Result: " + result);
 			DBVendor = conn.getMetaData().getDatabaseProductName();
@@ -1252,10 +1252,19 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 
 		} catch (SQLException e1) {
 
-			System.out.println("ERROR: Connection failed please check your login details... ");
+			System.out.println("ERROR: Connection failed please check your connection details... ");
+			System.out.println("Url -->"+url);
+			System.out.println("Username --> "+username);
+			
 			e1.printStackTrace();
-
-		}
+	
+	} 
+	    catch (StringIndexOutOfBoundsException e2) {
+	    	System.out.println("ERROR: Connection failed please check your connection details... ");
+			System.out.println("Url -->"+url);
+			System.out.println("Username --> "+username);
+		
+	}
 		// The time to get a connection to the database
 
 		if (conn != null)
