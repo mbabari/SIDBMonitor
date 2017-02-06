@@ -1252,11 +1252,11 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 
 		} catch (SQLException e1) {
 
+			
 			System.out.println("ERROR: Connection failed please check your connection details... ");
 			System.out.println("Url -->"+url);
 			System.out.println("Username --> "+username);
-			
-			e1.printStackTrace();
+			e1.printStackTrace();	
 	
 	} 
 	   
