@@ -1259,17 +1259,16 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			e1.printStackTrace();
 	
 	} 
-	    catch (StringIndexOutOfBoundsException e2) {
-	    	System.out.println("ERROR: Connection failed please check your connection details... ");
-			System.out.println("Url -->"+url);
-			System.out.println("Username --> "+username);
-		
-	}
+	   
 		// The time to get a connection to the database
 
 		if (conn != null)
+		{
 			try {
 				stmt = conn.createStatement();
+				
+
+			
 			} catch (SQLException e1) {
 
 				e1.printStackTrace();
@@ -1282,15 +1281,16 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 
 		System.out.println("JSON output " + jsonFilename);
 		System.out.println("The Report was successfully generated! " + filename);
-		
-
+	
 		// HTML footer
 
 		if (fullReport) {
 			result = report.addFooter().toString();
 			bufferAddString(result, false);
 		}
-
+		
+	
+		
 		/* closing */
 
 		try {
@@ -1311,6 +1311,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			e.printStackTrace();
 		}
 
+	}
 	}
 
 }
