@@ -40,7 +40,7 @@ public class SecureString {
 	        KeyGenerator kgen = KeyGenerator.getInstance("AES");
 	        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
 	        sr.setSeed(seed);
-	        kgen.init(128, sr); // 192 and 256 bits may not be available
+	        kgen.init(128, sr); 
 	        SecretKey skey = kgen.generateKey();
 	        byte[] raw = skey.getEncoded();
 	        return raw;
