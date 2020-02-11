@@ -6,14 +6,12 @@ public class HTMLDocument {
 	private StringBuilder HTMLHeader;
 	private StringBuilder HTMLFooter;
 	
-	
 	public  HTMLDocument()
 	{
 		HTMLHeader= new StringBuilder();
 		HTMLFooter= new StringBuilder();
 	}
-			
-	
+
 	public StringBuilder addHeader()
 	{
 		
@@ -39,7 +37,7 @@ public class HTMLDocument {
 		HTMLHeader.append("</style>");
 		HTMLHeader.append("</head>\n\n");
 		HTMLHeader.append("<body>\n\n");
-		HTMLHeader.append("<div class='title1'>IBM Sterling B2B Integrator Database monitor 1.7</div><br/>");
+		HTMLHeader.append("<div class='title1'>IBM Sterling B2B Integrator Database monitor 1.7.0</div><br/>");
 			
 		return HTMLHeader;
 		
@@ -47,8 +45,7 @@ public class HTMLDocument {
 	
 	public StringBuilder addFooter()
 	{
-		
-				
+					
 		HTMLFooter.append("\n\n</body>\n\n");
 		HTMLFooter.append("</html>");
 		return HTMLFooter;
