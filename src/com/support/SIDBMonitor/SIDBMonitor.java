@@ -111,7 +111,7 @@ public class SIDBMonitor extends Thread {
 
 				bufferAddString(result, true);
 				
-				bufferAddJSONString("\""+header+"\":\"",false);
+				bufferAddJSONString("\""+header.replaceAll("\\s+", "")+"\":\"",false);
 				
 				bufferAddJSONString(result+"\"", false);
 				if (header != "end_time"){
@@ -702,7 +702,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| transData_0.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(transData_0)) {
 				System.out.println("transData_0.. " + transData_0);
-				reportHeaderList.add("trans data 0");
+				reportHeaderList.add("TransData0");
 				if (DBVendor.substring(0, 3).equalsIgnoreCase("db2"))
 				{	
 				reportSQLList.add("select count(*) from " + schema
@@ -719,7 +719,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| correlationSet_1.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(correlationSet_1)) {
 				System.out.println("correlationSet_1.. " + correlationSet_1);
-				reportHeaderList.add("correl set -1");
+				reportHeaderList.add("CorrelSet-1");
 				
 				if (DBVendor.substring(0, 3).equalsIgnoreCase("db2"))
 				{	
@@ -738,7 +738,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| document_1.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(document_1)) {
 				System.out.println("document_1.. " + document_1);
-				reportHeaderList.add("document -1");
+				reportHeaderList.add("Document-1");
 				
 				if (DBVendor.substring(0, 3).equalsIgnoreCase("db2"))
 				{
@@ -758,7 +758,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(distinctWorkflowCount)) {
 				System.out.println("distinctWorkflowCount.. "
 						+ distinctWorkflowCount);
-				reportHeaderList.add("Distinct WFID");
+				reportHeaderList.add("DistinctWFID");
 				reportSQLList
 						.add("SELECT COUNT(DISTINCT WORKFLOW_ID) FROM "
 								+ schema
@@ -772,7 +772,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(missingLifespanSweeper)) {
 				System.out.println("missingLifespanSweeper.. "
 						+ missingLifespanSweeper);
-				reportHeaderList.add("MLS sweeper");
+				reportHeaderList.add("MLSsweeper");
 				reportSQLList.add("SELECT count(D.DOC_ID) from " + schema
 						+ ".DOCUMENT D LEFT" + " OUTER JOIN " + schema
 						+ ".DOCUMENT_LIFESPAN DL ON ( D.DOC_ID = DL.DOC_ID)"
@@ -785,7 +785,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(correlationSweeper)) {
 				System.out
 						.println("correlationSweeper.. " + correlationSweeper);
-				reportHeaderList.add("CS sweeper");
+				reportHeaderList.add("CSsweeper");
 				reportSQLList
 						.add("SELECT count(DISTINCT A.OBJECT_ID) from "
 								+ schema
@@ -801,7 +801,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(documentTotalSize)) {
 
 				System.out.println("documentTotalSize.. " + documentTotalSize);
-				reportHeaderList.add("doc size MB");
+				reportHeaderList.add("DocSizeMB");
 
 				if (DBVendor.substring(0, 5).equalsIgnoreCase("micro")) {
 
@@ -825,7 +825,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(eligiblePurgeCount)) {
 				System.out
 				.println("eligiblePurgeCount.. " + eligiblePurgeCount);
-				reportHeaderList.add("eligible purge CT");
+				reportHeaderList.add("eligiblePurgeCT");
 				
 				if (DBVendor.substring(0, 5).equalsIgnoreCase("micro")) {
 					
@@ -854,7 +854,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| purgeCount.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(purgeCount)) {
 				System.out.println("purgeCount.. " + purgeCount);
-				reportHeaderList.add("purge CT");
+				reportHeaderList.add("PurgeCT");
 				reportSQLList.add("SELECT count(*) FROM " + schema
 						+ ".ARCHIVE_INFO where ARCHIVE_FLAG  in (1,2)");
 
@@ -865,7 +865,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| nonIndexCount.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(nonIndexCount)) {
 				System.out.println("nonIndexCount.. " + nonIndexCount);
-				reportHeaderList.add("non index CT");
+				reportHeaderList.add("NonIndexCT");
 				reportSQLList.add("select count(*) from " + schema
 						+ ".ARCHIVE_INFO where ARCHIVE_FLAG < 0");
 			}
@@ -874,7 +874,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| haltedBPCount.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(haltedBPCount)) {
 				System.out.println("haltedBPCount.. " + haltedBPCount);
-				reportHeaderList.add("haltedBP CT");
+				reportHeaderList.add("haltedBPCT");
 				reportSQLList
 						.add("select count(distinct WC.WORKFLOW_ID) from "
 								+ schema
@@ -890,7 +890,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(interruptedBPCount)) {
 				System.out
 						.println("interruptedBPCount.. " + interruptedBPCount);
-				reportHeaderList.add("interrupted CT");
+				reportHeaderList.add("interruptedCT");
 				reportSQLList
 						.add("SELECT count( distinct WC.WORKFLOW_ID) "
 								+ "from "
@@ -914,7 +914,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				|| unassociatedCount.equalsIgnoreCase("false")) {
 			if (Boolean.valueOf(unassociatedCount)) {
 				System.out.println("unassociatedCount.. " + unassociatedCount);
-				reportHeaderList.add("unassociated CT");
+				reportHeaderList.add("unassociatedCT");
 				if (DBVendor.substring(0, 6).equalsIgnoreCase("oracle")) {
 					reportSQLList
 							.add("SELECT count(distinct D.DOC_ID) from "
@@ -962,7 +962,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 			if (Boolean.valueOf(transDataOrphansCount)) {
 				System.out.println("transDataOrphansCount.. "
 						+ transDataOrphansCount);
-				reportHeaderList.add("TD Orphans CT");
+				reportHeaderList.add("TDOrphansCT");
 				reportSQLList
 						.add("SELECT COUNT(*) FROM "
 								+ schema
@@ -986,7 +986,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 				if (DBVendor.substring(0, 6).equalsIgnoreCase("oracle")) {
 
 					System.out.println("Free Space GB.. " + DBFreeSpace);
-					reportHeaderList.add("Free Space GB");
+					reportHeaderList.add("FreeSpaceGB");
 					reportSQLList
 							.add("select round(sum(bytes)/1024/1024/1024,2) from dba_free_space");
 				} else if (DBVendor.substring(0, 3).equalsIgnoreCase("db2")) {
@@ -1006,7 +1006,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 
 				if (DBVendor.substring(0, 6).equalsIgnoreCase("oracle")) {
 					System.out.println("Total space GB.. " + DBTotalSpace);
-					reportHeaderList.add("Total space GB");
+					reportHeaderList.add("TotalSpaceGB");
 					reportSQLList
 							.add("select round(sum(bytes)/1024/1024/1024,2) from dba_data_files");
 
@@ -1022,7 +1022,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 
 		// ToDO create a method
 
-		reportHeaderList.add("end time");
+		reportHeaderList.add("end_time");
 
 		// create Header
 
@@ -1036,7 +1036,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 		bufferAddString("<tr>", false);
 		bufferAddJSONString("{", false);
 
-		runMonitorSQL(timeStamp(), "start time", "start_time");
+		runMonitorSQL(timeStamp(), "start_time", "start_time");
 
 		for (int i = 0; i < tbArray.length; i++) {
 		
@@ -1061,7 +1061,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
          i++;
 		}
  
-		runMonitorSQL(timeStamp(), "end time","end_time");
+		runMonitorSQL(timeStamp(), "end_time","end_time");
 
 		bufferAddString("</tr>", false);
 		bufferAddJSONString("}", false);
@@ -1117,7 +1117,7 @@ String[] reportHeader18 = { "START TIME HH24", "COUNT" };
 		System.out
 				.println("==================================================");
 		System.out
-				.println("IBM Sterling B2B Integrator Database monitor 1.7.0");
+				.println("IBM Sterling B2B Integrator Database monitor 1.8.0");
 		System.out
 				.println("==================================================");
 		

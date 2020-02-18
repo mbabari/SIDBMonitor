@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8'>
-<title>Database monitor report for IBM B2B Sterling Integrator 1.7</title>
+<title>Database monitor report for IBM B2B Sterling Integrator 1.8</title>
 <style type='text/css'>body {   font-family: Verdana,Helvetica,Arial,sans-serif;   font-size: 10pt}
 p {   font-family: Verdana,Helvetica,Arial,sans-serif;   font-size: 10pt}
 div.title0 {color: #7896CF;font-family:Verdana,Helvetica,Arial,sans-serif;font-size:16pt;font-weight: bold;}
@@ -13,8 +13,8 @@ div.title3 {color: #7896CF;font-family:Verdana,Helvetica,Arial,sans-serif;font-s
 
 <body>
 
-<div class='title1'>IBM Sterling B2B Integrator Database monitor 1.7</div><br/>
-Connected to url :[ jdbc:db2://9.155.214.77:60000/SI524_HR ] User: si524_hr in:  7446 ms
+<div class='title1'>IBM Sterling B2B Integrator Database monitor 1.8.0</div><br/>
+Connected to url :[ jdbc:oracle:thin:@9.156.179.243:1521:EMEA2ORA11 ] User: si52sg in:  1896 ms
 </p><br><table border=1 cellspacing=0 cellpadding=0 style='width:1215pt;border-collapse:collapse; border:none'><tbody>
 <tr class='header'>
 <th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>start time</th>
@@ -28,269 +28,186 @@ Connected to url :[ jdbc:db2://9.155.214.77:60000/SI524_HR ] User: si524_hr in: 
 <th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>WORKFLOW LINKAGE</th>
 <th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>TRANS DATA</th>
 <th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>trans data -1</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>trans data 0</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>correl set -1</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>document -1</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>Distinct WFID</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>CS sweeper</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>doc size MB</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>eligible purge CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>purge CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>non index CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>haltedBP CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>interrupted CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>unassociated CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>TD Orphans CT</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>Free Space GB</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>Total space GB</th>
-<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>end time</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>TransData0</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>CorrelSet-1</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>Document-1</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>DistinctWFID</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>CSsweeper</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>DocSizeMB</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>eligiblePurgeCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>PurgeCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>NonIndexCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>haltedBPCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>interruptedCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>unassociatedCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>TDOrphansCT</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>FreeSpaceGB</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>TotalSpaceGB</th>
+<th style='border:solid #7BA0CD 1.0pt; border-right:none;font-size: 8pt;'>end_time</th>
 </tr>
 <tr>
 <td>
-2017-05-16 14:57:39.761
+2020-02-18 12:20:03
 </td>
 <td>
-2986
-</td>
-<td>
-0
-</td>
-<td>
-116883
-</td>
-<td>
-618
-</td>
-<td>
-43
-</td>
-<td>
-46
-</td>
-<td>
-46
-</td>
-<td>
-34
-</td>
-<td>
-147662
-</td>
-<td>
-82
-</td>
-<td>
-48
-</td>
-<td>
-544
-</td>
-<td>
-41
-</td>
-<td>
-2547
+110
 </td>
 <td>
 0
 </td>
 <td>
-362
-</td>
-<td>
-12
-</td>
-<td>
-1072
-</td>
-<td>
-4108
-</td>
-<td>
-392
+27927
 </td>
 <td>
 0
 </td>
 <td>
-2
-</td>
-<td>
-7
-</td>
-<td>
-39
-</td>
-<td>
-56
-</td>
-<td>
-2017-05-16 14:57:47.031
-</td>
-</tr>
-<tr>
-<td>
-2017-11-22 15:23:36.074
-</td>
-<td>
-773
+0
 </td>
 <td>
 0
 </td>
 <td>
-91796
+0
 </td>
 <td>
-621
+293
 </td>
 <td>
-43
+121204
 </td>
 <td>
-46
+0
 </td>
 <td>
-46
+0
 </td>
 <td>
-16
+0
 </td>
 <td>
-114450
+0
 </td>
 <td>
-80
+3412
 </td>
 <td>
-91
+0
 </td>
 <td>
-534
-</td>
-<td>
-40
-</td>
-<td>
-2133
+0
 </td>
 <td>
 1
 </td>
 <td>
-82
+9315
+</td>
+<td>
+100
+</td>
+<td>
+31
+</td>
+<td>
+3
 </td>
 <td>
 0
 </td>
 <td>
-213
-</td>
-<td>
-4120
-</td>
-<td>
-393
-</td>
-<td>
 0
 </td>
 <td>
-2
+9.98
 </td>
 <td>
-7
+17.88
 </td>
 <td>
-38
-</td>
-<td>
-56
-</td>
-<td>
-2017-11-22 15:24:01.377
+2020-02-18 12:20:10
 </td>
 </tr>
 <tr>
 <td>
-2017-11-22 17:21:17.785
+2020-02-18 12:20:17
 </td>
 <td>
-773
-</td>
-<td>
-0
-</td>
-<td>
-91796
-</td>
-<td>
-621
-</td>
-<td>
-43
-</td>
-<td>
-46
-</td>
-<td>
-46
-</td>
-<td>
-16
-</td>
-<td>
-114450
-</td>
-<td>
-80
-</td>
-<td>
-91
-</td>
-<td>
-534
-</td>
-<td>
-40
-</td>
-<td>
-2133
-</td>
-<td>
-1
-</td>
-<td>
-82
+110
 </td>
 <td>
 0
 </td>
 <td>
-213
-</td>
-<td>
-4120
-</td>
-<td>
-393
+27937
 </td>
 <td>
 0
 </td>
 <td>
-2
+0
 </td>
 <td>
-7
+0
 </td>
 <td>
-38
+0
 </td>
 <td>
-56
+293
 </td>
 <td>
-2017-11-22 17:21:41.794
+121212
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+3413
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+6
+</td>
+<td>
+9315
+</td>
+<td>
+102
+</td>
+<td>
+31
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+9.98
+</td>
+<td>
+17.88
+</td>
+<td>
+2020-02-18 12:20:23
 </td>
 </tr>

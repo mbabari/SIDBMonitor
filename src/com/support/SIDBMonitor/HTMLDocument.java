@@ -20,7 +20,7 @@ public class HTMLDocument {
 		
 		HTMLHeader.append("<head>\n");
 		HTMLHeader.append("<meta charset='utf-8'>\n");
-		HTMLHeader.append("<title>Database monitor report for IBM B2B Sterling Integrator 1.7</title>\n");
+		HTMLHeader.append("<title>Database monitor report for IBM B2B Sterling Integrator 1.8</title>\n");
 		HTMLHeader.append("<style type='text/css'>");
 		HTMLHeader.append("body {   font-family: Verdana,Helvetica,Arial,sans-serif;   font-size: 10pt}\n");
 		HTMLHeader.append("p {   font-family: Verdana,Helvetica,Arial,sans-serif;   font-size: 10pt}\n");
@@ -37,7 +37,7 @@ public class HTMLDocument {
 		HTMLHeader.append("</style>");
 		HTMLHeader.append("</head>\n\n");
 		HTMLHeader.append("<body>\n\n");
-		HTMLHeader.append("<div class='title1'>IBM Sterling B2B Integrator Database monitor 1.7.0</div><br/>");
+		HTMLHeader.append("<div class='title1'>IBM Sterling B2B Integrator Database monitor 1.8.0</div><br/>");
 			
 		return HTMLHeader;
 		
