@@ -1,11 +1,12 @@
 # SIDBMonitor
+IBM Sterling B2B Integrator Database and KPIs monitoring tool.
 
 ## Documentation:
 https://sterlingsync.com/tired-of-sql-queries-try-the-sidbmonitor/
 
-## Buiding th tool:
+## Buiding the tool:
 To build the project: In Eclipse, create a Java runnable jar with export.
-Configure the SIDBMonitor.properties to point to your B2Bi Database.
+Configure the SIDBMonitor.properties to point to your Database.
 
 ## Disclaimer:
 Please note this is a NON IBM PRODUCT.
